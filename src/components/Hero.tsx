@@ -5,48 +5,46 @@ const Hero: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative w-full h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/IMG_0420.JPG')",
-      }}
+      className="relative w-full h-screen overflow-hidden"
     >
-      <div className="absolute inset-0 flex items-end justify-start px-10 pb-10 z-10">
-        <div className="text-left">
-          {/* 名前・肩書き */}
-          <h2 className="text-5xl font-extrabold tracking-wide text-white drop-shadow-md mb-2">
-            森田 佳奈世
-          </h2>
-          <h3 className="text-2xl tracking-widest text-gray-200 uppercase drop-shadow mb-4">
-            Kanayo Morita
-          </h3>
+      {/* 背景画像（軽くぼかし） */}
+      <div
+        className="absolute inset-0 bg-cover bg-center blur-sm scale-105"
+        style={{
+          backgroundImage: "url('/IMG_0420.JPG')",
+        }}
+      />
 
-          <div className="flex items-center text-white text-lg tracking-wide mb-6 drop-shadow">
-            <span>Director</span>
-            <span className="mx-2">/</span>
-            <span>Cameraman</span>
-            <span className="mx-2">/</span>
-            <span>Editor</span>
-          </div>
+      {/* 中央コンテンツ */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+        <h2 className="text-6xl font-extrabold text-white drop-shadow mb-4">
+          森田 佳奈世
+        </h2>
+        <h3 className="text-3xl uppercase text-gray-200 tracking-wider drop-shadow mb-6">
+          Kanayo Morita
+        </h3>
+        <div className="text-2xl text-white font-semibold tracking-wide mb-8 drop-shadow">
+          Director / Cameraman / Editor
+        </div>
 
-          {/* SNSリンク */}
-          <div className="flex space-x-4">
-            <a
-              href="https://www.instagram.com/kanayo_naka"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-white/90 text-gray-700 flex items-center justify-center hover:bg-pink-500 transition-colors"
-            >
-              <Instagram size={24} />
-            </a>
-            <a
-              href="https://youtube.com/@kanayomorita926"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-white/90 text-gray-700 flex items-center justify-center hover:bg-red-500 transition-colors"
-            >
-              <Youtube size={24} />
-            </a>
-          </div>
+        {/* SNSリンク */}
+        <div className="flex space-x-6">
+          <a
+            href="https://www.instagram.com/kanayo_naka"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full bg-white/90 text-gray-700 flex items-center justify-center hover:bg-pink-500 transition-colors"
+          >
+            <Instagram size={28} />
+          </a>
+          <a
+            href="https://youtube.com/@kanayomorita926"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full bg-white/90 text-gray-700 flex items-center justify-center hover:bg-red-500 transition-colors"
+          >
+            <Youtube size={28} />
+          </a>
         </div>
       </div>
     </section>
