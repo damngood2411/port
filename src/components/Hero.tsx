@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
         <h2 className="text-4xl font-extrabold text-white drop-shadow mb-4">
           森田 佳奈世
         </h2>
-        <h3 className="text-2xl uppercase text-gray-200 tracking-wider drop-shadow mb-6">
+        <h3 className="text-lxl uppercase text-gray-200 tracking-wider drop-shadow mb-6">
           Kanayo Morita
         </h3>
         <div className="text-xl text-white font-semibold tracking-wide mb-8 drop-shadow">
