@@ -86,7 +86,7 @@ const portfolioItems: PortfolioItem[] = [
 
 const Portfolio: React.FC = () => {
   return (
-    <section id="portfolio" className="py-20 bg-slate-900">
+    <section id="portfolio" className="bg-sky-50 text-gray-900 ...">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {portfolioItems.map((item) => (
