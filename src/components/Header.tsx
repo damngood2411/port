@@ -21,7 +21,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <h1 className="text-xl font-bold tracking-widest">
           <a href="#" className="hover:text-blue-400 transition-colors">
-            KUBOTA TAKAOMI
+            KANAYO MORITA
           </a>
         </h1>
         
