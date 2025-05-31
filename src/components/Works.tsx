@@ -16,85 +16,44 @@ interface WorkItem {
 const workItems: WorkItem[] = [
   {
     id: 1,
-    title: "Yellow numbers",
-    artist: "山崎あおい",
+    title: "aaa",
+    artist: "bbb",
     type: "MV",
     role: "Dir/Cam/Edit",
     year: 2023
   },
   {
     id: 2,
-    title: "アーティスト写真",
-    artist: "山崎あおい",
+    title: "aaa",
+    artist: "bbb",
     type: "OTHER",
     role: "Dir/Cam/Edit",
     year: 2023
   },
   {
     id: 3,
-    title: "snow WHITE",
-    artist: "山崎あおい",
+    title: "aaa",
+    artist: "bbb",
     type: "MV",
     role: "Dir/Cam/Edit",
     year: 2022
   },
   {
     id: 4,
-    title: "ぜろれいちゃん",
-    artist: "monorugo",
+    title: "aaa",
+    artist: "bbb",
     type: "MV",
     role: "Dir/Cam/Edit",
     year: 2022
   },
   {
     id: 5,
-    title: "はなひらけよう",
-    artist: "KAT-TUN",
+    title: "aaa",
+    artist: "bbb",
     type: "MV",
     role: "DOP",
     year: 2022
   },
-  {
-    id: 6,
-    title: "青春",
-    artist: "山崎あおい",
-    type: "MV",
-    role: "Dir/Cam/Edit",
-    year: 2021
-  },
-  {
-    id: 7,
-    title: "あしたで",
-    artist: "中村瞳",
-    type: "MV",
-    role: "Dir/Cam/Edit",
-    year: 2021
-  },
-  {
-    id: 8,
-    title: "HAPPY LIVE Day with YOU",
-    artist: "山崎あおい",
-    type: "LIVE",
-    role: "Dir/Edit",
-    year: 2021,
-    special: "10th Anniversary SPECIAL LIVE"
-  },
-  {
-    id: 9,
-    title: "ギターとわたし",
-    artist: "山崎あおい",
-    type: "MV",
-    role: "Dir/Cam/Edit",
-    year: 2020
-  },
-  {
-    id: 10,
-    title: "プロモビデオ",
-    artist: "AudioGear",
-    type: "COMMERCIAL",
-    role: "Dir/Cam/Edit",
-    year: 2020
-  }
 ];
 
 const Works: React.FC = () => {
