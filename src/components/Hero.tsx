@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black/40 z-0" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <h2 className="text-5xl font-extrabold text-white drop-shadow mb-4">
+        <h2 className="text-4xl font-extrabold text-white drop-shadow mb-4">
           森田 佳奈世
         </h2>
         <h3 className="text-2xl uppercase text-gray-200 tracking-wider drop-shadow mb-6">
