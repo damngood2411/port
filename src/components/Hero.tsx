@@ -7,13 +7,16 @@ const Hero: React.FC = () => {
       id="about"
       className="relative w-full h-screen overflow-hidden"
     >
-      {/* 背景画像（軽くぼかし） */}
+      {/* 背景画像 */}
       <div
         className="absolute inset-0 bg-cover bg-center blur-sm scale-105"
         style={{
           backgroundImage: "url('/IMG_0420.JPG')",
         }}
       />
+      
+      {/* 暗めオーバーレイ */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
 
       {/* 中央コンテンツ */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
