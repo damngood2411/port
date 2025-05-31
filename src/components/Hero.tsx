@@ -13,17 +13,17 @@ const Hero: React.FC = () => {
             {/* Replace with actual profile image */}
             <img 
               src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" 
-              alt="Kubota Takaomi" 
+              alt="Kanayo Morita" 
               className="w-full h-full object-cover"
             />
           </div>
         </div>
         
-        <h2 className="text-3xl font-bold mb-1 tracking-wider">窪田 貴臣</h2>
-        <h3 className="text-xl uppercase tracking-widest mb-2">KUBOTA TAKAOMI</h3>
+        <h2 className="text-3xl font-bold mb-1 tracking-wider">森田 佳奈世</h2>
+        <h3 className="text-xl uppercase tracking-widest mb-2">Kanayo Morita</h3>
         
         <div className="flex items-center justify-center text-gray-300 mb-6">
-          <span>Cinematographer</span>
+          <span>Videographer</span>
           <span className="mx-2">/</span>
           <span>Editor</span>
         </div>
