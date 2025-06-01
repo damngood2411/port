@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
     message: '',
     robot: false,
   });
-  
+
   const [errors, setErrors] = useState<Partial<FormState>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -56,22 +56,23 @@ const Contact: React.FC = () => {
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
-        setFormState({
-          name: '',
-          email: '',
-          message: '',
-          robot: false,
-        });
+        setFormState({ name: '', email: '', message: '', robot: false });
         setTimeout(() => setSubmitSuccess(false), 5000);
       }, 1500);
     }
   };
 
   return (
-    <section id="contact" className="py-20 bg-sky-100 text-gray-900">
-      <div className="container mx-auto px-4">
+    <section
+      id="contact"
+      className="relative py-20 bg-cover bg-center bg-no-repeat text-slate-900"
+      style={{ backgroundImage: "url('/IMG_6559.JPG')" }}
+    >
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0"></div>
+
+      <div className="relative z-10 container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2 text-center">Contact</h2>
-        <p className="text-center text-slate-600 mb-12">
+        <p className="text-center text-slate-100 mb-12">
           お問い合わせはこちらからお願いします
         </p>
 
