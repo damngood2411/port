@@ -35,7 +35,7 @@ const Works: React.FC = () => {
   };
 
   return (
-    <section id="works" className="py-20 bg-slate-100 text-slate-900">
+    <section id="works" className="py-20 bg-blue-100 text-slate-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center relative">
           Works
