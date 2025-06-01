@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 
       {/* コンテンツ */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <h2 className="text-4xl font-extrabold text-white drop-shadow mb-2">
+        <h2 className="text-3xl font-extrabold text-white drop-shadow mb-2">
           森田 佳奈世
         </h2>
         <h3 className="text-xl uppercase text-gray-200 tracking-wider drop-shadow mb-4">
