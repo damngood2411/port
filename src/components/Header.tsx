@@ -1,54 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleMenuToggle = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    setMenuOpen(false); // メニューを閉じる
+  };
+
   return (
-    <header className="bg-white text-slate-900 shadow-md fixed top-0 left-0 w-full z-50">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-md' : 'bg-white'
+      }`}
+    >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold tracking-widest">
+        {/* ロゴ */}
+        <h1 className="text-xl font-bold tracking-widest text-slate-900">
           <a href="#">KANAYO MORITA</a>
         </h1>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex space-x-8">
-          <a href="#about" className="hover:text-blue-500 transition-colors">ABOUT</a>
-          <a href="#portfolio" className="hover:text-blue-500 transition-colors">PORTFOLIO</a>
-          <a href="#works" className="hover:text-blue-500 transition-colors">WORKS</a>
-          <a href="#contact" className="hover:text-blue-500 transition-colors">CONTACT</a>
+        {/* デスクトップナビ */}
+        <nav className="hidden md:block">
+          <ul className="flex space-x-8 text-slate-800 font-medium">
+            <li><a href="#about" className="hover:text-blue-500">ABOUT</a></li>
+            <li><a href="#portfolio" className="hover:text-blue-500">PORTFOLIO</a></li>
+            <li><a href="#works" className="hover:text-blue-500">WORKS</a></li>
+            <li><a href="#contact" className="hover:text-blue-500">CONTACT</a></li>
+          </ul>
         </nav>
 
-        {/* Hamburger button */}
+        {/* ハンバーガー */}
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden focus:outline-none"
-          aria-label="Toggle Menu"
+          className="md:hidden text-slate-800 focus:outline-none"
+          onClick={handleMenuToggle}
+          aria-label="Toggle menu"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-              d={menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-            />
-          </svg>
+          {menuOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* モバイルメニュー */}
       <div
-        className={`md:hidden bg-white transition-all duration-300 ease-in-out ${
-          menuOpen ? 'max-h-60' : 'max-h-0 overflow-hidden'
+        className={`md:hidden bg-white transition-all duration-300 ease-in-out overflow-hidden ${
+          menuOpen ? 'max-h-60' : 'max-h-0'
         }`}
       >
-        <div className="flex flex-col px-6 py-4 space-y-4">
-          <a href="#about" className="hover:text-blue-500">ABOUT</a>
-          <a href="#portfolio" className="hover:text-blue-500">PORTFOLIO</a>
-          <a href="#works" className="hover:text-blue-500">WORKS</a>
-          <a href="#contact" className="hover:text-blue-500">CONTACT</a>
+        <div className="flex flex-col px-6 py-4 space-y-4 text-slate-800 font-medium">
+          <a href="#about" onClick={handleLinkClick} className="hover:text-blue-500">ABOUT</a>
+          <a href="#portfolio" onClick={handleLinkClick} className="hover:text-blue-500">PORTFOLIO</a>
+          <a href="#works" onClick={handleLinkClick} className="hover:text-blue-500">WORKS</a>
+          <a href="#contact" onClick={handleLinkClick} className="hover:text-blue-500">CONTACT</a>
         </div>
       </div>
     </header>
