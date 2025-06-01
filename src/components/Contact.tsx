@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-purple-100 text-slate-900">
+    <section id="contact" className="py-20 bg-sky-100 text-gray-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2 text-center">Contact</h2>
         <p className="text-center text-slate-600 mb-12">
