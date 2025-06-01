@@ -8,18 +8,12 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMenuToggle = () => {
-    setMenuOpen((prev) => !prev);
-  };
-
-  const handleLinkClick = () => {
-    setMenuOpen(false);
-  };
+  const handleMenuToggle = () => setMenuOpen((prev) => !prev);
+  const handleLinkClick = () => setMenuOpen(false);
 
   return (
     <header
@@ -27,29 +21,14 @@ const Header: React.FC = () => {
         isScrolled ? 'bg-white shadow-md' : 'bg-white'
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
-        <div className="text-center md:text-left">
-          <h1 className="text-xl font-bold tracking-widest text-slate-900">
-            <a href="#">KANAYO MORITA</a>
-          </h1>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wider text-slate-800 leading-tight">
-            森田 佳奈世
-          </h2>
-        </div>
+      <div className="container mx-auto px-4 py-4 flex items-center">
+        <h1 className="text-xl font-bold tracking-widest text-slate-900">
+          <a href="#">KANAYO MORITA</a>
+        </h1>
 
-        {/* デスクトップナビ */}
-        <nav className="hidden md:block mt-4 md:mt-0">
-          <ul className="flex space-x-8 text-slate-800 font-medium">
-            <li><a href="#about" className="hover:text-blue-500">ABOUT</a></li>
-            <li><a href="#portfolio" className="hover:text-blue-500">PORTFOLIO</a></li>
-            <li><a href="#works" className="hover:text-blue-500">WORKS</a></li>
-            <li><a href="#contact" className="hover:text-blue-500">CONTACT</a></li>
-          </ul>
-        </nav>
-
-        {/* ハンバーガー */}
+        {/* ハンバーガー：モバイル時右寄せ */}
         <button
-          className="md:hidden mt-4 text-slate-800 focus:outline-none"
+          className="md:hidden ml-auto text-slate-800 focus:outline-none"
           onClick={handleMenuToggle}
           aria-label="Toggle menu"
         >
@@ -63,6 +42,15 @@ const Header: React.FC = () => {
             </svg>
           )}
         </button>
+
+        <nav className="hidden md:block ml-auto">
+          <ul className="flex space-x-8 text-slate-800 font-medium">
+            <li><a href="#about" className="hover:text-blue-500">ABOUT</a></li>
+            <li><a href="#portfolio" className="hover:text-blue-500">PORTFOLIO</a></li>
+            <li><a href="#works" className="hover:text-blue-500">WORKS</a></li>
+            <li><a href="#contact" className="hover:text-blue-500">CONTACT</a></li>
+          </ul>
+        </nav>
       </div>
 
       {/* モバイルメニュー */}
