@@ -7,12 +7,15 @@ const Hero: React.FC = () => {
       id="about"
       className="relative w-full h-screen overflow-hidden"
     >
+      {/* 背景画像（カラー・等倍） */}
       <div
-        className="absolute inset-0 z-0 scale-[2] bg-cover bg-center filter grayscale"
+        className="absolute inset-0 bg-cover bg-center z-0"
         style={{ backgroundImage: "url('/IMG_0420.JPG')" }}
       />
+      {/* 暗さとぼかしオーバーレイ */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0" />
 
+      {/* コンテンツ */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
         <h2 className="text-4xl font-extrabold text-white drop-shadow mb-2">
           森田 佳奈世
