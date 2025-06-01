@@ -68,6 +68,7 @@ const Contact: React.FC = () => {
       className="relative py-20 bg-cover bg-center bg-no-repeat text-slate-900"
       style={{ backgroundImage: "url('/IMG_6559.JPG')" }}
     >
+      <div className="absolute inset-0 scale-[1.5] bg-cover bg-center z-0" style={{ backgroundImage: "url('/IMG_6559.JPG')" }}></div>
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0"></div>
 
       <div className="relative z-10 container mx-auto px-4">
