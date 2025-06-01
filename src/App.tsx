@@ -9,7 +9,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900 text-white flex flex-col">
+    <div className="min-h-screen bg-gray-100 text-gray-800 flex flex-col">
       <Header />
       <main>
         <Hero />
