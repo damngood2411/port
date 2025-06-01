@@ -65,11 +65,13 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 bg-cover bg-center bg-no-repeat text-slate-900"
-      style={{ backgroundImage: "url('/IMG_6559.JPG')" }}
+      className="relative py-20 overflow-hidden text-slate-900"
     >
-      <div className="absolute inset-0 scale-[1.5] bg-cover bg-center z-0" style={{ backgroundImage: "url('/IMG_6559.JPG')" }}></div>
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0"></div>
+      <div
+        className="absolute inset-0 scale-[2] bg-cover bg-center filter grayscale z-0"
+        style={{ backgroundImage: "url('/IMG_6559.JPG')" }}
+      />
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0" />
 
       <div className="relative z-10 container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2 text-center">Contact</h2>
