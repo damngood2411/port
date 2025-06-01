@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Portfolio item interface
 interface PortfolioItem {
   id: number;
   title: string;
@@ -101,8 +100,8 @@ const Portfolio: React.FC = () => {
 
 const PortfolioCard: React.FC<{ item: PortfolioItem }> = ({ item }) => {
   return (
-    <div className="group relative overflow-hidden rounded-md cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
-      <div className="aspect-video overflow-hidden">
+    <div className="group relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md bg-white">
+      <div className="aspect-video overflow-hidden rounded-t-xl">
         <img 
           src={item.imageUrl} 
           alt={item.title} 
@@ -110,9 +109,9 @@ const PortfolioCard: React.FC<{ item: PortfolioItem }> = ({ item }) => {
         />
       </div>
       
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-        <h3 className="text-xl font-bold text-white">{item.title}</h3>
-        <span className="text-sm text-blue-400">{item.category}</span>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+        <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+        <span className="text-sm text-blue-200">{item.category}</span>
       </div>
     </div>
   );
