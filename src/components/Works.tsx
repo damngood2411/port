@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-// Work item interface
 interface WorkItem {
   id: number;
   title: string;
@@ -12,48 +11,12 @@ interface WorkItem {
   special?: string;
 }
 
-// Sample works data
 const workItems: WorkItem[] = [
-  {
-    id: 1,
-    title: "aaa",
-    artist: "bbb",
-    type: "MV",
-    role: "Dir/Cam/Edit",
-    year: 2023
-  },
-  {
-    id: 2,
-    title: "aaa",
-    artist: "bbb",
-    type: "OTHER",
-    role: "Dir/Cam/Edit",
-    year: 2023
-  },
-  {
-    id: 3,
-    title: "aaa",
-    artist: "bbb",
-    type: "MV",
-    role: "Dir/Cam/Edit",
-    year: 2022
-  },
-  {
-    id: 4,
-    title: "aaa",
-    artist: "bbb",
-    type: "MV",
-    role: "Dir/Cam/Edit",
-    year: 2022
-  },
-  {
-    id: 5,
-    title: "aaa",
-    artist: "bbb",
-    type: "MV",
-    role: "DOP",
-    year: 2022
-  },
+  { id: 1, title: "aaa", artist: "bbb", type: "MV", role: "Dir/Cam/Edit", year: 2023 },
+  { id: 2, title: "aaa", artist: "bbb", type: "OTHER", role: "Dir/Cam/Edit", year: 2023 },
+  { id: 3, title: "aaa", artist: "bbb", type: "MV", role: "Dir/Cam/Edit", year: 2022 },
+  { id: 4, title: "aaa", artist: "bbb", type: "MV", role: "Dir/Cam/Edit", year: 2022 },
+  { id: 5, title: "aaa", artist: "bbb", type: "MV", role: "DOP", year: 2022 },
 ];
 
 const Works: React.FC = () => {
@@ -62,61 +25,55 @@ const Works: React.FC = () => {
 
   const getBadgeColor = (type: WorkItem['type']) => {
     switch (type) {
-      case 'MV':
-        return 'bg-red-500';
-      case 'LIVE':
-        return 'bg-green-500';
-      case 'COMMERCIAL':
-        return 'bg-purple-500';
-      case 'FILM':
-        return 'bg-yellow-500';
-      case 'GAME':
-        return 'bg-blue-500';
-      default:
-        return 'bg-gray-500';
+      case 'MV': return 'bg-red-400';
+      case 'LIVE': return 'bg-green-400';
+      case 'COMMERCIAL': return 'bg-purple-400';
+      case 'FILM': return 'bg-yellow-400';
+      case 'GAME': return 'bg-blue-400';
+      default: return 'bg-gray-400';
     }
   };
 
   return (
-    <section id="works" className="py-20 bg-slate-800">
+    <section id="works" className="py-20 bg-slate-100 text-slate-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center relative">
           Works
-          <span className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-500"></span>
+          <span className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-400"></span>
         </h2>
         
         <div className="max-w-3xl mx-auto">
           <ul className="space-y-4">
             {displayedWorks.map((work) => (
               <li 
-                key={work.id} 
-                className="bg-slate-700 rounded-md p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between"
+                key={work.id}
+                className="bg-white rounded-lg shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between"
               >
                 <div className="flex items-start mb-3 sm:mb-0">
-                  <span className={`${getBadgeColor(work.type)} text-xs font-bold px-2 py-1 rounded-md mr-4 min-w-[60px] text-center`}>
+                  <span className={`${getBadgeColor(work.type)} text-xs font-semibold text-white px-2 py-1 rounded-md mr-4 min-w-[60px] text-center`}>
                     {work.type}
                   </span>
                   <div>
-                    <h3 className="font-bold">
-                      {work.artist && <span className="text-gray-300">{work.artist} 「</span>}
+                    <h3 className="font-semibold text-gray-800">
+                      {work.artist && <span className="text-gray-600">{work.artist} 「</span>}
                       {work.title}
-                      {work.artist && <span className="text-gray-300">」</span>}
+                      {work.artist && <span className="text-gray-600">」</span>}
                     </h3>
                     {work.special && (
-                      <p className="text-sm text-gray-400">{work.special}</p>
+                      <p className="text-sm text-gray-500">{work.special}</p>
                     )}
                   </div>
                 </div>
-                <span className="text-sm text-gray-300">{work.role}</span>
+                <span className="text-sm text-gray-600">{work.role}</span>
               </li>
             ))}
           </ul>
-          
+
           {workItems.length > 6 && (
             <div className="mt-10 text-center">
               <button 
                 onClick={() => setShowAll(!showAll)} 
-                className="bg-slate-700 hover:bg-slate-600 text-white rounded-full px-6 py-2 flex items-center mx-auto transition-colors"
+                className="bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium rounded-full px-6 py-2 flex items-center mx-auto transition-colors"
               >
                 {showAll ? 'Show Less' : 'もっと見る'}
                 <ChevronDown className={`ml-2 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} size={16} />
