@@ -7,22 +7,25 @@ const Hero: React.FC = () => {
       id="about"
       className="relative w-full h-screen overflow-hidden"
     >
+      {/* 背景画像（ぼかし付き） */}
       <div
         className="absolute inset-0 bg-cover bg-center blur-sm scale-105"
         style={{
           backgroundImage: "url('/IMG_0420.JPG')",
         }}
       />
+      {/* 黒のオーバーレイ */}
       <div className="absolute inset-0 bg-black/40 z-0" />
 
+      {/* コンテンツ */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <h2 className="text-4xl font-extrabold text-white drop-shadow mb-4">
+        <h2 className="text-4xl font-extrabold text-white drop-shadow mb-2">
           森田 佳奈世
         </h2>
-        <h3 className="text-lxl uppercase text-gray-200 tracking-wider drop-shadow mb-6">
+        <h3 className="text-xl uppercase text-gray-200 tracking-wider drop-shadow mb-4">
           Kanayo Morita
         </h3>
-        <div className="text-xl text-white font-semibold tracking-wide mb-8 drop-shadow">
+        <div className="text-lg text-white font-semibold tracking-wide mb-8 drop-shadow">
           Director / Cameraman / Editor
         </div>
         <div className="flex space-x-6">
