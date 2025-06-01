@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   };
 
   const handleLinkClick = () => {
-    setMenuOpen(false); // メニューを閉じる
+    setMenuOpen(false);
   };
 
   return (
@@ -27,14 +27,18 @@ const Header: React.FC = () => {
         isScrolled ? 'bg-white shadow-md' : 'bg-white'
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* ロゴ */}
-        <h1 className="text-xl font-bold tracking-widest text-slate-900">
-          <a href="#">KANAYO MORITA</a>
-        </h1>
+      <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
+        <div className="text-center md:text-left">
+          <h1 className="text-xl font-bold tracking-widest text-slate-900">
+            <a href="#">KANAYO MORITA</a>
+          </h1>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wider text-slate-800 leading-tight">
+            森田 佳奈世
+          </h2>
+        </div>
 
         {/* デスクトップナビ */}
-        <nav className="hidden md:block">
+        <nav className="hidden md:block mt-4 md:mt-0">
           <ul className="flex space-x-8 text-slate-800 font-medium">
             <li><a href="#about" className="hover:text-blue-500">ABOUT</a></li>
             <li><a href="#portfolio" className="hover:text-blue-500">PORTFOLIO</a></li>
@@ -45,7 +49,7 @@ const Header: React.FC = () => {
 
         {/* ハンバーガー */}
         <button
-          className="md:hidden text-slate-800 focus:outline-none"
+          className="md:hidden mt-4 text-slate-800 focus:outline-none"
           onClick={handleMenuToggle}
           aria-label="Toggle menu"
         >
