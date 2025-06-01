@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
       id="contact"
       className="relative py-20 overflow-hidden text-white"
     >
-      {/* 背景画像（ズーム2倍＋白黒＋ぼかし＋暗さ） */}
+      {/* 背景画像 */}
       <div
         className="absolute inset-0 z-0 scale-[2] bg-cover bg-center filter grayscale"
         style={{ backgroundImage: "url('/IMG_6559.JPG')" }}
@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
           className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md"
         >
           <div className="mb-4">
-            <label htmlFor="name" className="block text-white text-sm font-medium mb-1">
+            <label htmlFor="name" className="block text-black text-sm font-medium mb-1">
               Name
             </label>
             <input
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-white text-sm font-medium mb-1">
+            <label htmlFor="email" className="block text-black text-sm font-medium mb-1">
               Email
             </label>
             <input
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="message" className="block text-white text-sm font-medium mb-1">
+            <label htmlFor="message" className="block text-black text-sm font-medium mb-1">
               Message
             </label>
             <textarea
@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="mb-6">
-            <label className="flex items-center text-white text-sm">
+            <label className="flex items-center text-black text-sm">
               <input
                 type="checkbox"
                 name="robot"
