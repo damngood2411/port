@@ -67,12 +67,14 @@ const Contact: React.FC = () => {
       id="contact"
       className="relative py-20 overflow-hidden text-slate-900"
     >
+      {/* 背景画像レイヤー（ズーム + 白黒 + クロップ） */}
       <div
-        className="absolute inset-0 scale-[2] bg-cover bg-center filter grayscale z-0"
+        className="absolute inset-0 z-0 scale-[2] bg-cover bg-center filter grayscale"
         style={{ backgroundImage: "url('/IMG_6559.JPG')" }}
       />
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0" />
 
+      {/* フォームコンテンツ */}
       <div className="relative z-10 container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2 text-center">Contact</h2>
         <p className="text-center text-slate-100 mb-12">
