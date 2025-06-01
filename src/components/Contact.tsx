@@ -65,19 +65,17 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 overflow-hidden text-slate-900"
+      className="relative py-20 overflow-hidden text-white"
     >
-      {/* 背景画像レイヤー（ズーム + 白黒 + クロップ） */}
       <div
         className="absolute inset-0 z-0 scale-[2] bg-cover bg-center filter grayscale"
         style={{ backgroundImage: "url('/IMG_6559.JPG')" }}
       />
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0" />
 
-      {/* フォームコンテンツ */}
       <div className="relative z-10 container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-2 text-center">Contact</h2>
-        <p className="text-center text-slate-100 mb-12">
+        <h2 className="text-3xl font-bold mb-2 text-center text-white">Contact</h2>
+        <p className="text-center text-white mb-12">
           お問い合わせはこちらからお願いします
         </p>
 
@@ -92,7 +90,7 @@ const Contact: React.FC = () => {
           className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md"
         >
           <div className="mb-4">
-            <label htmlFor="name" className="block text-slate-700 text-sm font-medium mb-1">
+            <label htmlFor="name" className="block text-white text-sm font-medium mb-1">
               Name
             </label>
             <input
@@ -101,7 +99,7 @@ const Contact: React.FC = () => {
               type="text"
               value={formState.name}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 ${
+              className={`w-full px-3 py-2 border rounded-md text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 ${
                 errors.name ? 'border-red-500' : 'border-slate-300'
               }`}
             />
@@ -109,7 +107,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-slate-700 text-sm font-medium mb-1">
+            <label htmlFor="email" className="block text-white text-sm font-medium mb-1">
               Email
             </label>
             <input
@@ -118,7 +116,7 @@ const Contact: React.FC = () => {
               type="email"
               value={formState.email}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 ${
+              className={`w-full px-3 py-2 border rounded-md text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 ${
                 errors.email ? 'border-red-500' : 'border-slate-300'
               }`}
             />
@@ -126,7 +124,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="message" className="block text-slate-700 text-sm font-medium mb-1">
+            <label htmlFor="message" className="block text-white text-sm font-medium mb-1">
               Message
             </label>
             <textarea
@@ -135,7 +133,7 @@ const Contact: React.FC = () => {
               rows={5}
               value={formState.message}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none ${
+              className={`w-full px-3 py-2 border rounded-md text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none ${
                 errors.message ? 'border-red-500' : 'border-slate-300'
               }`}
             />
@@ -143,7 +141,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="mb-6">
-            <label className="flex items-center text-slate-700 text-sm">
+            <label className="flex items-center text-white text-sm">
               <input
                 type="checkbox"
                 name="robot"
