@@ -57,10 +57,10 @@ const Portfolio: React.FC = () => {
   return (
     <section
       id="portfolio"
-      className="relative py-20 text-gray-900 overflow-hidden"
+      className="relative min-h-screen py-20 text-gray-900 overflow-hidden"
     >
       {/* 背景画像 */}
-      <div className="absolute inset-0 -z-10">
+      <div className="pointer-events-none absolute inset-0 z-0">
         <img
           src="/shooting-scene.JPG"
           alt="Background"
@@ -68,7 +68,7 @@ const Portfolio: React.FC = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-10">
         <h2 className="text-3xl font-bold text-white drop-shadow-lg text-center mb-12">
           Portfolio
         </h2>
