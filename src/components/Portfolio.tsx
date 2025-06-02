@@ -68,43 +68,48 @@ const Portfolio: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-10">
-        <h2 className="text-3xl font-bold text-white drop-shadow-lg text-center mb-12">
-          Portfolio
-        </h2>
+      {/* 白い丸い枠でコンテンツを囲む */}
+      <div className="relative z-10 flex justify-center px-4">
+        <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-xl p-8 w-full max-w-7xl">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-10">
+            <h2 className="text-3xl font-bold text-white drop-shadow-lg text-center mb-12">
+              Portfolio
+            </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {portfolioItems.map((item) => {
-            const Card = (
-              <div className="group relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md bg-white">
-                <div className="aspect-video overflow-hidden rounded-t-xl">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                  <span className="text-sm text-blue-200">{item.category}</span>
-                </div>
-              </div>
-            );
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {portfolioItems.map((item) => {
+                const Card = (
+                  <div className="group relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md bg-white">
+                    <div className="aspect-video overflow-hidden rounded-t-xl">
+                      <img
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                      <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                      <span className="text-sm text-blue-200">{item.category}</span>
+                    </div>
+                  </div>
+                );
 
-            return item.videoUrl ? (
-              <a
-                key={item.id}
-                href={item.videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                {Card}
-              </a>
-            ) : (
-              <div key={item.id}>{Card}</div>
-            );
-          })}
+                return item.videoUrl ? (
+                  <a
+                    key={item.id}
+                    href={item.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    {Card}
+                  </a>
+                ) : (
+                  <div key={item.id}>{Card}</div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -112,3 +117,4 @@ const Portfolio: React.FC = () => {
 };
 
 export default Portfolio;
+
