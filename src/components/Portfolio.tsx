@@ -19,21 +19,21 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 2,
     title: "狂音文奏楽「文豪メランコリー」PV",
-    imageUrl: "/文豪メランコリー-pv.png",
+    imageUrl: "/文豪メランコリーpv.png",
     category: "PV",
     videoUrl: "https://youtu.be/GVsFmb-nsqs"
   },
   {
     id: 3,
     title: "狂音文奏楽「文豪メランコリーRe.」PV",
-    imageUrl: "/文豪メランコリー-Re PV.png",
+    imageUrl: "/文豪メランコリーRe PV.png",
     category: "PV",
     videoUrl: "https://youtu.be/KCdq4Oc1Etk"
   },
   {
     id: 4,
     title: "狂音文奏楽「文豪メランコリーRe.」本編予告",
-    imageUrl: "/文豪メランコリー-予告.png",
+    imageUrl: "/文豪メランコリー予告.png",
     category: "CM",
     videoUrl: "https://youtu.be/IigZEvv6fDQ"
   },
