@@ -54,11 +54,11 @@ const Works: React.FC = () => {
           Works
           <span className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-400"></span>
         </h2>
-        
+
         <div className="max-w-3xl mx-auto">
           <ul className="space-y-4">
             {displayedWorks.map((work) => (
-              <li 
+              <li
                 key={work.id}
                 className="bg-white rounded-lg shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between"
               >
@@ -75,22 +75,27 @@ const Works: React.FC = () => {
                     </a>
                   )}
                 </div>
-                <span className="text-sm text-gray-600">
-                  {work.id === 2 || work.id === 3 ? `${work.year}〜` : work.year}
-                </span>
-                <span className="text-sm text-gray-600">{work.role}</span>
+                <div className="flex flex-col items-end text-right">
+                  <span className="text-sm text-gray-600">
+                    {work.id === 2 || work.id === 3 ? `${work.year}〜` : work.year}
+                  </span>
+                  <span className="text-sm text-gray-600">{work.role}</span>
+                </div>
               </li>
             ))}
           </ul>
 
           {workItems.length > 6 && (
             <div className="mt-10 text-center">
-              <button 
-                onClick={() => setShowAll(!showAll)} 
+              <button
+                onClick={() => setShowAll(!showAll)}
                 className="bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium rounded-full px-6 py-2 flex items-center mx-auto transition-colors"
               >
                 {showAll ? 'Show Less' : 'もっと見る'}
-                <ChevronDown className={`ml-2 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} size={16} />
+                <ChevronDown
+                  className={`ml-2 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`}
+                  size={16}
+                />
               </button>
             </div>
           )}
