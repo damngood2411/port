@@ -62,7 +62,7 @@ const Portfolio: React.FC = () => {
       {/* 背景画像 */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="/撮影風景.JPG"
+          src="/shooting-scene.JPG"
           alt="Background"
           className="w-full h-full object-cover scale-150 filter grayscale blur-md"
         />
