@@ -12,45 +12,38 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     title: "HiTREX Interview",
-    imageUrl: "https://img.youtube.com/vi/cMIE5r8WYgs/maxresdefault.jpg",
+    imageUrl: "/HiTREX.png",
     category: "Interview",
     videoUrl: "https://youtu.be/cMIE5r8WYgs"
   },
   {
     id: 2,
     title: "狂音文奏楽「文豪メランコリー」PV",
-    imageUrl: "https://img.youtube.com/vi/GVsFmb-nsqs/maxresdefault.jpg",
+    imageUrl: "/文豪メランコリー-pv.png",
     category: "PV",
     videoUrl: "https://youtu.be/GVsFmb-nsqs"
   },
   {
     id: 3,
     title: "狂音文奏楽「文豪メランコリーRe.」PV",
-    imageUrl: "https://img.youtube.com/vi/KCdq4Oc1Etk/maxresdefault.jpg",
+    imageUrl: "/文豪メランコリー-Re PV.png",
     category: "PV",
     videoUrl: "https://youtu.be/KCdq4Oc1Etk"
   },
   {
     id: 4,
     title: "狂音文奏楽「文豪メランコリーRe.」本編予告",
-    imageUrl: "https://img.youtube.com/vi/IigZEvv6fDQ/maxresdefault.jpg",
+    imageUrl: "/文豪メランコリー-予告.png",
     category: "CM",
     videoUrl: "https://youtu.be/IigZEvv6fDQ"
   },
   {
     id: 5,
     title: "shoe shine",
-    imageUrl: "https://img.youtube.com/vi/YhQSXRaEab4/maxresdefault.jpg",
+    imageUrl: "/Shoeshine.png",
     category: "PV",
     videoUrl: "https://youtu.be/YhQSXRaEab4"
-  },
-  {
-    id: 6,
-    title: "Forgot something",
-    imageUrl: "https://img.youtube.com/vi/az_GeBchIoU/maxresdefault.jpg",
-    category: "PV",
-    videoUrl: "https://youtu.be/az_GeBchIoU"
-  },
+  }
 ];
 
 const Portfolio: React.FC = () => {
