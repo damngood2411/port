@@ -47,7 +47,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 6,
     title: "Forgot something",
-    imageUrl: "/forgot something.jpeg",
+    imageUrl: "/forgot something.png",
     category: "PV",
     videoUrl: "https://youtu.be/az_GeBchIoU"
   }
@@ -62,7 +62,7 @@ const Portfolio: React.FC = () => {
       {/* 背景画像 */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="/撮影風景.jpeg"
+          src="/撮影風景.jpg"
           alt="Background"
           className="w-full h-full object-cover scale-150 filter grayscale blur-md"
         />
