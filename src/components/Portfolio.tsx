@@ -19,21 +19,21 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 2,
     title: "狂音文奏楽「文豪メランコリー」PV",
-    imageUrl: "/文豪メランコリーpv.png",
+    imageUrl: "/文豪メランコリー-pv.png",
     category: "PV",
     videoUrl: "https://youtu.be/GVsFmb-nsqs"
   },
   {
     id: 3,
     title: "狂音文奏楽「文豪メランコリーRe.」PV",
-    imageUrl: "/文豪メランコリーRe PV.png",
+    imageUrl: "/文豪メランコリー-Re PV.png",
     category: "PV",
     videoUrl: "https://youtu.be/KCdq4Oc1Etk"
   },
   {
     id: 4,
     title: "狂音文奏楽「文豪メランコリーRe.」本編予告",
-    imageUrl: "/文豪メランコリー予告.png",
+    imageUrl: "/文豪メランコリー-予告.png",
     category: "CM",
     videoUrl: "https://youtu.be/IigZEvv6fDQ"
   },
@@ -43,12 +43,31 @@ const portfolioItems: PortfolioItem[] = [
     imageUrl: "/Shoeshine.png",
     category: "PV",
     videoUrl: "https://youtu.be/YhQSXRaEab4"
+  },
+  {
+    id: 6,
+    title: "Forgot something",
+    imageUrl: "/forgot something.jpeg",
+    category: "PV",
+    videoUrl: "https://youtu.be/az_GeBchIoU"
   }
 ];
 
 const Portfolio: React.FC = () => {
   return (
-    <section id="portfolio" className="py-20 bg-sky-100 text-gray-900">
+    <section
+      id="portfolio"
+      className="relative py-20 text-gray-900 overflow-hidden"
+    >
+      {/* 背景画像 */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="/撮影風景.jpeg"
+          alt="Background"
+          className="w-full h-full object-cover scale-150 filter grayscale blur-md"
+        />
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-10">
         <h2 className="text-3xl font-bold text-center mb-12">Portfolio</h2>
 
@@ -91,4 +110,3 @@ const Portfolio: React.FC = () => {
 };
 
 export default Portfolio;
-
