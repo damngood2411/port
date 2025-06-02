@@ -60,16 +60,18 @@ const Portfolio: React.FC = () => {
       className="relative py-20 text-gray-900 overflow-hidden"
     >
       {/* 背景画像 */}
-      <div className="absolute inset-0 z-1">
+      <div className="absolute inset-0 -z-10">
         <img
           src="/shooting-scene.JPG"
           alt="Background"
-          className="w-full h-full object-cover scale-150 filter grayscale blur-md"
+          className="w-full h-full object-cover scale-125 filter grayscale brightness-50 blur-sm"
         />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-10">
-        <h2 className="text-3xl font-bold text-center mb-12">Portfolio</h2>
+        <h2 className="text-3xl font-bold text-white drop-shadow-lg text-center mb-12">
+          Portfolio
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {portfolioItems.map((item) => {
