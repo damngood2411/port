@@ -60,7 +60,7 @@ const Portfolio: React.FC = () => {
       className="relative py-20 text-gray-900 overflow-hidden"
     >
       {/* 背景画像 */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-1">
         <img
           src="/shooting-scene.JPG"
           alt="Background"
