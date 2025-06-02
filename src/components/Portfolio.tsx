@@ -19,21 +19,21 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 2,
     title: "狂音文奏楽「文豪メランコリー」PV",
-    imageUrl: "/文豪メランコリーpv.png",
+    imageUrl: "/文豪メランコリー-pv.png",
     category: "PV",
     videoUrl: "https://youtu.be/GVsFmb-nsqs"
   },
   {
     id: 3,
     title: "狂音文奏楽「文豪メランコリーRe.」PV",
-    imageUrl: "/文豪メランコリーRe PV.png",
+    imageUrl: "/文豪メランコリー-Re PV.png",
     category: "PV",
     videoUrl: "https://youtu.be/KCdq4Oc1Etk"
   },
   {
     id: 4,
     title: "狂音文奏楽「文豪メランコリーRe.」本編予告",
-    imageUrl: "/文豪メランコリー予告.png",
+    imageUrl: "/文豪メランコリー-予告.png",
     category: "CM",
     videoUrl: "https://youtu.be/IigZEvv6fDQ"
   },
@@ -53,35 +53,37 @@ const Portfolio: React.FC = () => {
         <h2 className="text-3xl font-bold text-center mb-12">Portfolio</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {portfolioItems.map((item) => (
-            <div
-              key={item.id}
-              className="group relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md bg-white"
-            >
-              <div className="aspect-video overflow-hidden rounded-t-xl">
-                {item.videoUrl ? (
-                  <a href={item.videoUrl} target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={item.imageUrl}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </a>
-                ) : (
+          {portfolioItems.map((item) => {
+            const Card = (
+              <div className="group relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md bg-white">
+                <div className="aspect-video overflow-hidden rounded-t-xl">
                   <img
                     src={item.imageUrl}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                )}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <span className="text-sm text-blue-200">{item.category}</span>
+                </div>
               </div>
+            );
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                <span className="text-sm text-blue-200">{item.category}</span>
-              </div>
-            </div>
-          ))}
+            return item.videoUrl ? (
+              <a
+                key={item.id}
+                href={item.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                {Card}
+              </a>
+            ) : (
+              <div key={item.id}>{Card}</div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -89,4 +91,3 @@ const Portfolio: React.FC = () => {
 };
 
 export default Portfolio;
-
