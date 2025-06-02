@@ -4,35 +4,48 @@ import { ChevronDown } from 'lucide-react';
 interface WorkItem {
   id: number;
   title: string;
-  artist?: string;
-  type: 'MV' | 'LIVE' | 'COMMERCIAL' | 'FILM' | 'OTHER' | 'GAME';
   role: string;
   year: number;
   special?: string;
 }
 
 const workItems: WorkItem[] = [
-  { id: 1, title: "aaa", artist: "bbb", type: "MV", role: "Dir/Cam/Edit", year: 2023 },
-  { id: 2, title: "aaa", artist: "bbb", type: "OTHER", role: "Dir/Cam/Edit", year: 2023 },
-  { id: 3, title: "aaa", artist: "bbb", type: "MV", role: "Dir/Cam/Edit", year: 2022 },
-  { id: 4, title: "aaa", artist: "bbb", type: "MV", role: "Dir/Cam/Edit", year: 2022 },
-  { id: 5, title: "aaa", artist: "bbb", type: "MV", role: "DOP", year: 2022 },
+  {
+    id: 1,
+    title: "ミュージカル『青春-AOHARU-鉄道』",
+    role: "Interview Edit",
+    year: 2024
+  },
+  {
+    id: 2,
+    title: "大手ライブコマース",
+    role: "Cam",
+    year: 2024
+  },
+  {
+    id: 3,
+    title: "大手アイドルグループMV・LIVE",
+    role: "BtsCam",
+    year: 2024
+  },
+  {
+    id: 4,
+    title: "アイスホッケーライブ配信",
+    role: "Cam",
+    year: 2022
+  },
+  {
+    id: 5,
+    title: "RYUCHELL「Never say Never again」MV",
+    role: "Dir",
+    year: 2022,
+    special: "https://prtimes.jp/main/html/rd/p/000000001.000115066.html"
+  }
 ];
 
 const Works: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
   const displayedWorks = showAll ? workItems : workItems.slice(0, 6);
-
-  const getBadgeColor = (type: WorkItem['type']) => {
-    switch (type) {
-      case 'MV': return 'bg-red-400';
-      case 'LIVE': return 'bg-green-400';
-      case 'COMMERCIAL': return 'bg-purple-400';
-      case 'FILM': return 'bg-yellow-400';
-      case 'GAME': return 'bg-blue-400';
-      default: return 'bg-gray-400';
-    }
-  };
 
   return (
     <section id="works" className="py-20 bg-blue-100 text-slate-900">
@@ -49,21 +62,22 @@ const Works: React.FC = () => {
                 key={work.id}
                 className="bg-white rounded-lg shadow-md p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between"
               >
-                <div className="flex items-start mb-3 sm:mb-0">
-                  <span className={`${getBadgeColor(work.type)} text-xs font-semibold text-white px-2 py-1 rounded-md mr-4 min-w-[60px] text-center`}>
-                    {work.type}
-                  </span>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">
-                      {work.artist && <span className="text-gray-600">{work.artist} 「</span>}
-                      {work.title}
-                      {work.artist && <span className="text-gray-600">」</span>}
-                    </h3>
-                    {work.special && (
-                      <p className="text-sm text-gray-500">{work.special}</p>
-                    )}
-                  </div>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                  <h3 className="font-semibold text-gray-800">{work.title}</h3>
+                  {work.special && (
+                    <a
+                      href={work.special}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-500 underline break-all"
+                    >
+                      Link
+                    </a>
+                  )}
                 </div>
+                <span className="text-sm text-gray-600">
+                  {work.id === 2 || work.id === 3 ? `${work.year}〜` : work.year}
+                </span>
                 <span className="text-sm text-gray-600">{work.role}</span>
               </li>
             ))}
